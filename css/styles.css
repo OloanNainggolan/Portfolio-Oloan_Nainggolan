@@ -1082,23 +1082,188 @@ body.dark-theme .navbar.scrolled {
 
 /* ==================== FOOTER ==================== */
 .footer {
-  background: var(--bg-dark);
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
   color: white;
-  padding: var(--spacing-lg) 0;
-  text-align: center;
+  padding: var(--spacing-2xl) 0 var(--spacing-md);
+  position: relative;
+  overflow: hidden;
 }
 
-.footer-content p {
-  margin-bottom: 0.5rem;
+.footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--primary-color), var(--secondary-color), var(--accent-color));
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1.5fr;
+  gap: var(--spacing-2xl);
+  margin-bottom: var(--spacing-2xl);
+  padding-bottom: var(--spacing-2xl);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-column h3 {
+  font-size: 1.5rem;
+  margin-bottom: var(--spacing-xs);
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .footer-tagline {
   color: rgba(255, 255, 255, 0.7);
   font-size: 0.875rem;
+  margin-bottom: var(--spacing-md);
 }
 
-.footer-tagline i {
+.footer-description {
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.6;
+  margin-bottom: var(--spacing-md);
+}
+
+.footer-credentials {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-xs);
+}
+
+.credential-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.375rem 0.75rem;
+  background: rgba(99, 102, 241, 0.2);
+  border: 1px solid rgba(99, 102, 241, 0.3);
+  border-radius: var(--radius-sm);
+  font-size: 0.75rem;
+  color: var(--primary-light);
+}
+
+.credential-badge i {
+  color: var(--primary-color);
+}
+
+.footer-heading {
+  font-size: 1.125rem;
+  margin-bottom: var(--spacing-md);
+  color: white;
+  font-weight: 600;
+}
+
+.footer-links {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.footer-links a {
+  color: rgba(255, 255, 255, 0.7);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  transition: all var(--transition-base);
+  font-size: 0.9375rem;
+}
+
+.footer-links a:hover {
+  color: var(--primary-light);
+  transform: translateX(5px);
+}
+
+.footer-links a i {
+  font-size: 0.75rem;
+  color: var(--primary-color);
+}
+
+.footer-contact {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+  margin-bottom: var(--spacing-md);
+}
+
+.footer-contact-item {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  color: rgba(255, 255, 255, 0.7);
+  transition: all var(--transition-base);
+  font-size: 0.9375rem;
+}
+
+.footer-contact-item:hover {
+  color: var(--primary-light);
+}
+
+.footer-contact-item i {
+  width: 20px;
+  color: var(--primary-color);
+  font-size: 1rem;
+}
+
+.footer-social {
+  display: flex;
+  gap: var(--spacing-sm);
+}
+
+.footer-social a {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: var(--radius-md);
+  color: white;
+  font-size: 1.125rem;
+  transition: all var(--transition-base);
+}
+
+.footer-social a:hover {
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  border-color: transparent;
+  transform: translateY(-3px);
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: var(--spacing-md);
+}
+
+.footer-bottom p {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.875rem;
+  margin-bottom: 0.5rem;
+}
+
+.footer-made {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.footer-made i {
   color: #ef4444;
+  animation: heartbeat 1.5s ease-in-out infinite;
+}
+
+@keyframes heartbeat {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
 }
 
 /* ==================== SCROLL TO TOP ==================== */
@@ -1178,6 +1343,11 @@ body.dark-theme .navbar.scrolled {
   
   .skills-grid {
     grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .footer-grid {
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: var(--spacing-lg);
   }
 }
 
@@ -1259,6 +1429,15 @@ body.dark-theme .navbar.scrolled {
   
   .contact-form-wrapper {
     padding: var(--spacing-md);
+  }
+  
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-xl);
+  }
+  
+  .footer-social {
+    justify-content: flex-start;
   }
 }
 
