@@ -394,6 +394,7 @@ body.dark-theme .navbar.scrolled {
   color: var(--text-secondary);
   margin-bottom: var(--spacing-lg);
   line-height: 1.8;
+  text-align: justify;
 }
 
 .home-buttons {
@@ -611,6 +612,7 @@ body.dark-theme .navbar.scrolled {
 .project-description {
   color: var(--text-secondary);
   margin-bottom: var(--spacing-md);
+  text-align: justify;
 }
 
 .project-tags {
@@ -649,6 +651,7 @@ body.dark-theme .navbar.scrolled {
   color: var(--text-secondary);
   margin-bottom: var(--spacing-md);
   line-height: 1.8;
+  text-align: justify;
 }
 
 .about-info {
@@ -722,6 +725,7 @@ body.dark-theme .navbar.scrolled {
 .skill-item span {
   font-weight: 600;
   font-size: 0.875rem;
+  text-align: center;
 }
 
 /* ==================== RESUME SECTION ==================== */
@@ -819,6 +823,7 @@ body.dark-theme .navbar.scrolled {
 .timeline-content .description {
   color: var(--text-secondary);
   line-height: 1.6;
+  text-align: justify;
 }
 
 .certifications {
@@ -887,6 +892,7 @@ body.dark-theme .navbar.scrolled {
   color: var(--text-secondary);
   line-height: 1.8;
   margin-bottom: var(--spacing-lg);
+  text-align: justify;
 }
 
 .contact-details {
